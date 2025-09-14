@@ -63,7 +63,7 @@
 *   **Node.js**: Entorno de ejecución de JavaScript.
 *   **Express**: Framework de aplicación web.
 *   **Sequelize**: ORM para Node.js.
-*   **PostgreSQL**: Base de datos relacional de objetos.
+*   **MySQL**: Base de datos relacional de objetos.
 *   **JSON Web Token (JWT)**: Para la autenticación.
 *   **Bcrypt.js**: Para el hashing de contraseñas.
 *   **Joi**: Para la validación de datos.
@@ -76,13 +76,13 @@
 
 *   Node.js (v14 o superior)
 *   NPM
-*   PostgreSQL
+*   MySQL
 
 ### Instalación
 
 1.  Clona el repositorio:
     ```sh
-    git clone https://URL-DE-TU-REPOSITORIO.git
+    git clone https://github.com/peterCocho/api_del_proyecto.git
     ```
 2.  Instala las dependencias:
     ```sh
