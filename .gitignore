@@ -1,3 +1,11 @@
+# .gitignore
 node_modules/
-dist/
+*.exe
+*.linux
+*.macos
+logs/
 .env
+*.log
+npm-debug.log*
+dist/
+npm-debug.log*
