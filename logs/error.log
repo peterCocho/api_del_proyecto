@@ -1,0 +1,1 @@
+{"level":"error","message":"Error: Product not found\n    at getById (C:\\Users\\hp\\nodejs-api-rest-solida\\src\\controllers\\productController.js:27:21)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2025-09-07T17:27:00.815Z"}

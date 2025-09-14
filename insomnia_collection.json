@@ -1,0 +1,201 @@
+
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-09-07T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_1",
+      "parentId": null,
+      "modified": 1678886400000,
+      "created": 1678886400000,
+      "name": "Node.js Solid API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_1",
+      "parentId": "wrk_1",
+      "modified": 1678886400000,
+      "created": 1678886400000,
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://localhost:3000/api",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "baseUrl",
+          "jwt_token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "_type": "environment"
+    },
+    {
+      "_id": "fld_auth",
+      "parentId": "wrk_1",
+      "name": "Authentication",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -100,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_1",
+      "parentId": "fld_auth",
+      "url": "{{ _.baseUrl }}/auth/register",
+      "name": "Register User",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Test User\",\n\t\"email\": \"test@example.com\",\n\t\"password\": \"password123\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_2",
+      "parentId": "fld_auth",
+      "url": "{{ _.baseUrl }}/auth/login",
+      "name": "Login User",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"test@example.com\",\n\t\"password\": \"password123\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "fld_users",
+      "parentId": "wrk_1",
+      "name": "Users",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -50,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_5",
+      "parentId": "fld_users",
+      "url": "{{ _.baseUrl }}/users",
+      "name": "Get All Users",
+      "method": "GET",
+      "authentication": { "type": "bearer", "token": "{{ _.jwt_token }}" },
+      "_type": "request"
+    },
+    {
+      "_id": "req_6",
+      "parentId": "fld_users",
+      "url": "{{ _.baseUrl }}/users/1",
+      "name": "Get User by ID",
+      "method": "GET",
+      "authentication": { "type": "bearer", "token": "{{ _.jwt_token }}" },
+      "_type": "request"
+    },
+    {
+      "_id": "req_7",
+      "parentId": "fld_users",
+      "url": "{{ _.baseUrl }}/users/1",
+      "name": "Update User",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Updated Test User\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": { "type": "bearer", "token": "{{ _.jwt_token }}" },
+      "_type": "request"
+    },
+    {
+      "_id": "req_8",
+      "parentId": "fld_users",
+      "url": "{{ _.baseUrl }}/users/1",
+      "name": "Delete User",
+      "method": "DELETE",
+      "authentication": { "type": "bearer", "token": "{{ _.jwt_token }}" },
+      "_type": "request"
+    },
+    {
+      "_id": "fld_products",
+      "parentId": "wrk_1",
+      "name": "Products",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": 0,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_3",
+      "parentId": "fld_products",
+      "url": "{{ _.baseUrl }}/products",
+      "name": "Get All Products",
+      "method": "GET",
+      "authentication": { "type": "bearer", "token": "{{ _.jwt_token }}" },
+      "_type": "request"
+    },
+    {
+      "_id": "req_4",
+      "parentId": "fld_products",
+      "url": "{{ _.baseUrl }}/products",
+      "name": "Create Product",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Laptop Pro\",\n\t\"description\": \"A very powerful laptop\",\n\t\"price\": 1999.99\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": { "type": "bearer", "token": "{{ _.jwt_token }}" },
+      "_type": "request"
+    },
+    {
+      "_id": "req_9",
+      "parentId": "fld_products",
+      "url": "{{ _.baseUrl }}/products/1",
+      "name": "Get Product by ID",
+      "method": "GET",
+      "authentication": { "type": "bearer", "token": "{{ _.jwt_token }}" },
+      "_type": "request"
+    },
+    {
+      "_id": "req_10",
+      "parentId": "fld_products",
+      "url": "{{ _.baseUrl }}/products/1",
+      "name": "Update Product",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Laptop Pro X\",\n\t\"price\": 2199.99\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "authentication": { "type": "bearer", "token": "{{ _.jwt_token }}" },
+      "_type": "request"
+    },
+    {
+      "_id": "req_11",
+      "parentId": "fld_products",
+      "url": "{{ _.baseUrl }}/products/1",
+      "name": "Delete Product",
+      "method": "DELETE",
+      "authentication": { "type": "bearer", "token": "{{ _.jwt_token }}" },
+      "_type": "request"
+    }
+  ]
+}
